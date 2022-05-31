@@ -1,16 +1,12 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
 import NavBar from './components/NavBar'
 import SideNav from './components/SideNav'
-import Card from './components/Card'
-
-import styles from '../styles/Home.module.css'
+import Table from './components/Table'
 
 
 
 
-const Home: NextPage = () => {
+const TablePage: NextPage = () => {
   return (
     <div className="sb-nav-fixed">
       {/* side nav 
@@ -18,11 +14,11 @@ const Home: NextPage = () => {
       main */}
       <NavBar/>
       <div id="layoutSidenav">
-        <Card/>
+        <Table/>
       <SideNav/>
       </div>
     </div>
   )
 }
 
-export default Home
+export default TablePage
