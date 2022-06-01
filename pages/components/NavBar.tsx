@@ -1,10 +1,13 @@
 // import styles from '../styles/Home.module.css'
 import Link from 'next/link';
-import { useEffect,useState } from 'react';
+// import { useEffect,useState } from 'react';
+import React, { useState,Dispatch, SetStateAction } from 'react';
+interface IProps {
+    openSideNav: boolean;
+    setOpenSideNav?: Dispatch<SetStateAction<boolean>>;
+  }
 
-const NavBar = () => {
-    const [openSideNav,setOpenSideNav] = useState(false)
-
+const NavBar = ({openSideNav,setOpenSideNav}:IProps) => {
       
     return (
         <>
