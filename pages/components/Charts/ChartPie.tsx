@@ -32,7 +32,8 @@ const dataPie = {
     }
 };
   
-const ChartPie = (props) => {
+
+const ChartPie = (props: { width: string | number | undefined; height: string | number | undefined; }) => {
     return (
         <div>
             <Pie
