@@ -58,7 +58,7 @@ const dataBar = {
     }
 };
 
-const ChartBar = (props) => {
+const ChartBar = (props: { width: string | number | undefined; height: string | number | undefined; }) => {
     return (
         <div>
             <Bar
