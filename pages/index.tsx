@@ -3,8 +3,10 @@ import Head from "next/head";
 import Image from "next/image";
 import NavBar from "./components/NavBar";
 import SideNav from "./components/SideNav";
+import ChartBar from './components/Charts/ChartBar';
 
 import styles from "../styles/Home.module.css";
+import ChartLine from "./components/Charts/ChartLine";
 
 const Home: NextPage = () => {
   return (
@@ -85,11 +87,7 @@ const Home: NextPage = () => {
                       Area Chart Example
                     </div>
                     <div className="card-body">
-                      <canvas
-                        id="myAreaChart"
-                        width="100%"
-                        height="40"
-                      ></canvas>
+                      <ChartLine id='myLineChart' width={'100%'} height={40} />
                     </div>
                   </div>
                 </div>
@@ -100,7 +98,7 @@ const Home: NextPage = () => {
                       Bar Chart Example
                     </div>
                     <div className="card-body">
-                      <canvas id="myBarChart" width="100%" height="40"></canvas>
+                    <ChartBar id='myBarChart' width={'100%'} height={40} />
                     </div>
                   </div>
                 </div>
