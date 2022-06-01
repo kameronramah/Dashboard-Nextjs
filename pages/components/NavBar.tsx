@@ -2,7 +2,6 @@
 
 const NavBar = () => {
     return (
-        <>
         <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             {/* <!-- Navbar Brand--> */}
             <a className="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
@@ -28,9 +27,7 @@ const NavBar = () => {
                 </li>
             </ul>
         </nav>
-        </>
-
-  )
+    )
 }
 
 export default NavBar

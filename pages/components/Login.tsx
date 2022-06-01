@@ -3,7 +3,7 @@
 
 const Login = () => {
   return (
-    <body className="bg-primary">
+    <div className="bg-primary">
       <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
           <main>
@@ -72,7 +72,7 @@ const Login = () => {
           </main>
         </div>
       </div>
-    </body>
+      </div>
   );
 };
 
