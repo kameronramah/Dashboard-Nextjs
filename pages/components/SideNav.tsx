@@ -2,15 +2,19 @@
 import Nav from 'react-bootstrap/Nav'
 import Accordion from 'react-bootstrap/Accordion'
 import Link from 'next/link';
+import { useState } from 'react';
 
 // import { Button } from 'react-bootstrap';
 
 
 const SideNav = () => {
+
+ const [boolTheme,setBoolTheme] = useState(false)
+
     return (
         <>
             <div id="layoutSidenav_nav">
-                <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <nav className={`sb-sidenav accordion ${(boolTheme) ? "sb-sidenav-dark" : "sb-sidenav-light"}`} id="sidenavAccordion">
                     <div className="sb-sidenav-menu">
                         <div className="nav">
                             <div className="sb-sidenav-menu-heading">Core</div>
@@ -29,10 +33,10 @@ const SideNav = () => {
                             </a>
                             <div className="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav className="sb-sidenav-menu-nested nav">
-                                    <Link href="layout-static.html">
+                                    <Link href="/">
                                         <a className="nav-link" >Static Navigation</a>
                                     </Link>
-                                    <Link href="layout-sidenav-light.html"><a className="nav-link" >Light Sidenav</a></Link>
+                                    <a className="nav-link"  onClick={()=>{setBoolTheme(!boolTheme)} }>Light Sidenav</a>
                                 </nav>
                             </div>
                             <a className="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -48,13 +52,13 @@ const SideNav = () => {
                                     </a>
                                     <div className="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav className="sb-sidenav-menu-nested nav">
-                                            <Link href="login.html">
+                                            <Link href="LoginPage">
                                                 <a className="nav-link" >Login</a>
                                             </Link>
-                                            <Link href="login.html">
+                                            <Link href="RegisterPage">
                                                 <a className="nav-link" >Register</a>
                                             </Link>
-                                            <Link href="login.html">
+                                            <Link href="ForgetPasswordPage">
                                                 <a className="nav-link" >Forgot Password</a>
                                             </Link>
                                         </nav>
@@ -65,21 +69,21 @@ const SideNav = () => {
                                     </a>
                                     <div className="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav className="sb-sidenav-menu-nested nav">
-                                            <Link href="401.html">
+                                            <Link href="401Page">
                                             <a className="nav-link" >401 Page</a>
                                             </Link>
-                                            <Link href="401.html">
-                                            <a className="nav-link" >401 Page</a>
+                                            <Link href="404Page">
+                                            <a className="nav-link" >404 Page</a>
                                             </Link>
-                                            <Link href="401.html">
-                                                <a className="nav-link" >401 Page</a>
+                                            <Link href="500Page">
+                                                <a className="nav-link" >500 Page</a>
                                             </Link>
                                         </nav>
                                     </div>
                                 </nav>
                             </div>
                             <div className="sb-sidenav-menu-heading">Addons</div>
-                            <Link href="tables.html">
+                            <Link href="charts">
                             <a className="nav-link" href="charts.html">
                                 <div className="sb-nav-link-icon"><i className="fas fa-chart-area"></i></div>
                                 Charts

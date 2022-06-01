@@ -1,14 +1,19 @@
 // import styles from '../styles/Home.module.css'
 import Link from 'next/link';
+import { useEffect,useState } from 'react';
 
 const NavBar = () => {
+    const [openSideNav,setOpenSideNav] = useState(false)
+
+      
     return (
         <>
         <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             {/* <!-- Navbar Brand--> */}
-            <Link className="navbar-brand ps-3 text-light" href="/"><h1 className='text-light'>Start Bootstrap</h1></Link>
+            <Link href="/"><a className="navbar-brand ps-3" >Start Bootstrap</a></Link>
+            
             {/* <!-- Sidebar Toggle--> */}
-            <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" ><i className="fas fa-bars"></i></button>
+            <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"onClick={()=>{setOpenSideNav(!openSideNav)}}><i className="bi bi-list"></i></button>
             {/* <!-- Navbar Search--> */}
             <form className="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div className="input-group">
@@ -21,10 +26,10 @@ const NavBar = () => {
                 <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i className="fas fa-user fa-fw"></i></a>
                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><Link className="dropdown-item" href="#!"><>Settings</></Link></li>
-                        <li><Link className="dropdown-item" href="#!"><>Activity Log</></Link></li>
+                        <li><a className="dropdown-item" href="#!">Settings</a></li>
+                        <li><a className="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr className="dropdown-divider" /></li>
-                        <li><Link className="dropdown-item" href="#!"><>Logout</></Link></li>
+                        <li><a className="dropdown-item" href="#!">Logout</a></li>
                     </ul>
                 </li>
             </ul>
