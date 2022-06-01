@@ -3,7 +3,7 @@
 
 const Register = () => {
   return (
-    <body className="bg-primary">
+    <div className="bg-primary">
       <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
           <main>
@@ -101,7 +101,7 @@ const Register = () => {
           </main>
         </div>
       </div>
-    </body>
+    </div>
   );
 };
 
