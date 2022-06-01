@@ -3,6 +3,7 @@ import Footer from './components/Footer'
 import NavBar from './components/NavBar'
 import SideNav from './components/SideNav'
 import Table from './components/Table'
+import Link from 'next/link';
 
 
 
@@ -19,7 +20,7 @@ const TablePage: NextPage = () => {
             <div className="card mb-4">
                 <div className="card-body">
                     DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
-                    <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
+                    <Link href="https://datatables.net/">  <a target="_blank" >official DataTables documentation</a></Link>
                     .
                 </div>
             </div>
