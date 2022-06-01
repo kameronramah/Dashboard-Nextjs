@@ -1,82 +1,109 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import NavBar from './components/NavBar'
-import SideNav from './components/SideNav'
-
-import styles from '../styles/Home.module.css'
-
-
-
+import type { NextPage } from "next";
+import React, {useEffect} from "react";
+import NavBar from "./components/NavBar";
+import SideNav from "./components/SideNav";
+import ChartBar from './components/Charts/ChartBar';
+import ChartLine from "./components/Charts/ChartLine";
+import { DataTable } from 'simple-datatables';
+import Table from "./components/Table";
+import Footer from "./components/Footer";
 
 const Home: NextPage = () => {
+
+  useEffect(() => {
+    let myTable = document.querySelector("#datatablesSimple");
+    const dataTable = new DataTable(myTable as Element);
+  });
+  
   return (
-    <div className="sb-nav-fixed">
-      {/* side nav 
-      navbar 
-      main */}
-      <NavBar/>
-      <div id="layoutSidenav">
-      <SideNav/>
-
-
-<main className={styles.main}>
-  <h1 className={styles.title}>
-    Welcome to <a href="https://nextjs.org">Next.js!</a>
-  </h1>
-
-  <p className={styles.description}>
-    Get started by editing{' '}
-    <code className={styles.code}>pages/index.tsx</code>
-  </p>
-
-  <div className={styles.grid}>
-    <a href="https://nextjs.org/docs" className={styles.card}>
-      <h2>Documentation &rarr;</h2>
-      <p>Find in-depth information about Next.js features and API.</p>
-    </a>
-
-    <a href="https://nextjs.org/learn" className={styles.card}>
-      <h2>Learn &rarr;</h2>
-      <p>Learn about Next.js in an interactive course with quizzes!</p>
-    </a>
-
-    <a
-      href="https://github.com/vercel/next.js/tree/canary/examples"
-      className={styles.card}
-    >
-      <h2>Examples &rarr;</h2>
-      <p>Discover and deploy boilerplate example Next.js projects.</p>
-    </a>
-
-    <a
-      href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-      className={styles.card}
-    >
-      <h2>Deploy &rarr;</h2>
-      <p>
-        Instantly deploy your Next.js site to a public URL with Vercel.
-      </p>
-    </a>
-  </div>
-</main>
+  <div id="layoutSidenav_content">
+      <div className="container-fluid px-4">
+        <h1 className="mt-4">Dashboard</h1>
+        <ol className="breadcrumb mb-4">
+          <li className="breadcrumb-item active">Dashboard</li>
+        </ol>
+        <div className="row">
+          <div className="col-xl-3 col-md-6">
+            <div className="card bg-primary text-white mb-4">
+              <div className="card-body">Primary Card</div>
+              <div className="card-footer d-flex align-items-center justify-content-between">
+                <a className="small text-white stretched-link" href="#">
+                  View Details
+                </a>
+                <div className="small text-white">
+                  <i className="fas fa-angle-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-3 col-md-6">
+            <div className="card bg-warning text-white mb-4">
+              <div className="card-body">Warning Card</div>
+              <div className="card-footer d-flex align-items-center justify-content-between">
+                <a className="small text-white stretched-link" href="#">
+                  View Details
+                </a>
+                <div className="small text-white">
+                  <i className="fas fa-angle-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-3 col-md-6">
+            <div className="card bg-success text-white mb-4">
+              <div className="card-body">Success Card</div>
+              <div className="card-footer d-flex align-items-center justify-content-between">
+                <a className="small text-white stretched-link" href="#">
+                  View Details
+                </a>
+                <div className="small text-white">
+                  <i className="fas fa-angle-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-3 col-md-6">
+            <div className="card bg-danger text-white mb-4">
+              <div className="card-body">Danger Card</div>
+              <div className="card-footer d-flex align-items-center justify-content-between">
+                <a className="small text-white stretched-link" href="#">
+                  View Details
+                </a>
+                <div className="small text-white">
+                  <i className="fas fa-angle-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xl-6">
+            <div className="card mb-4">
+              <div className="card-header">
+                <i className="fas fa-chart-area me-1"></i>
+                Area Chart Example
+              </div>
+              <div className="card-body">
+                <ChartLine width={'100%'} height={40} />
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-6">
+            <div className="card mb-4">
+              <div className="card-header">
+                <i className="fas fa-chart-bar me-1"></i>
+                Bar Chart Example
+              </div>
+              <div className="card-body">
+              <ChartBar width={'100%'} height={40} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <Table/>  
       </div>
-
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

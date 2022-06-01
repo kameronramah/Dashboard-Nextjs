@@ -1,13 +1,22 @@
 // import styles from '../styles/Home.module.css'
+import Link from 'next/link';
+// import { useEffect,useState } from 'react';
+import React, {Dispatch, SetStateAction } from 'react';
+interface IProps {
+    openSideNav?: boolean;
+    setOpenSideNav?: Dispatch<SetStateAction<boolean>>;
+  }
 
-const NavBar = () => {
+const NavBar = ({openSideNav,setOpenSideNav}:IProps) => {
+      
     return (
         <>
         <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             {/* <!-- Navbar Brand--> */}
-            <a className="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+            <Link href="/"><a className="navbar-brand ps-3" >Start Bootstrap</a></Link>
+            
             {/* <!-- Sidebar Toggle--> */}
-            <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" ><i className="fas fa-bars"></i></button>
+            <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"onClick={()=>{setOpenSideNav?.(!openSideNav)}}><i className="bi bi-list"></i></button>
             {/* <!-- Navbar Search--> */}
             <form className="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div className="input-group">
