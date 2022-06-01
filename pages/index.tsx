@@ -12,7 +12,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     let myTable = document.querySelector("#datatablesSimple");
-    const dataTable = new DataTable(myTable);
+    const dataTable = new DataTable(myTable as Element);
   });
   
   return (
