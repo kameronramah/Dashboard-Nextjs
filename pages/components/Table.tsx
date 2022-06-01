@@ -7,7 +7,6 @@ const Table = () => {
     useEffect(() => {
         let myTable = document.querySelector("#datatablesSimple");
         const dataTable = new DataTable(myTable as Element);
-
     });    
 
     return (
