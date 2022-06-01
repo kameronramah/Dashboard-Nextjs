@@ -4,6 +4,8 @@ import SideNav from './components/SideNav';
 import ChartLine from './components/Charts/ChartLine';
 import ChartBar from './components/Charts/ChartBar';
 import ChartPie from './components/Charts/ChartPie';
+import Link from 'next/link';
+
 
 const Home: NextPage = () => {
   return (
