@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import NavBar from "./components/NavBar";
-import SideNav from "./components/SideNav";
+
 
 import styles from "../styles/Home.module.css";
 
@@ -12,9 +11,7 @@ const Home: NextPage = () => {
       {/* side nav 
       navbar 
       main */}
-      <NavBar />
-      <div id="layoutSidenav">
-        <SideNav />
+
 
         <div id="layoutSidenav_content">
           <main>
@@ -596,7 +593,7 @@ const Home: NextPage = () => {
             </div>
           </main>
         </div>
-      </div>
+      
     </div>
   );
 };

@@ -1,23 +1,26 @@
 // import styles from '../styles/Home.module.css'
 import Nav from 'react-bootstrap/Nav'
+import Accordion from 'react-bootstrap/Accordion'
+import Link from 'next/link';
+
 // import { Button } from 'react-bootstrap';
+
 
 const SideNav = () => {
     return (
         <>
             <div id="layoutSidenav_nav">
-            {/* 
-            <Nav.Link eventKey="link-2">Link</Nav.Link>
-                    <Nav.Link eventKey="disabled" disabled>
-                     */}
-                <Nav defaultActiveKey="/home" className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div className="sb-sidenav-menu">
                         <div className="nav">
                             <div className="sb-sidenav-menu-heading">Core</div>
-                            <Nav.Link eventKey="link-2" className="nav-link" href="index.html">
-                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
-                                Dashboard
-                            </Nav.Link>
+                            <Link href="/">
+                                <a className="nav-link" >
+                                    <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                    Dashboard
+                                </a>
+                            </Link>
+
                             <div className="sb-sidenav-menu-heading">Interface</div>
                             <a className="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div className="sb-nav-link-icon"><i className="fas fa-columns"></i></div>
@@ -26,8 +29,10 @@ const SideNav = () => {
                             </a>
                             <div className="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav className="sb-sidenav-menu-nested nav">
-                                    <a className="nav-link" href="layout-static.html">Static Navigation</a>
-                                    <a className="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                    <Link href="layout-static.html">
+                                        <a className="nav-link" >Static Navigation</a>
+                                    </Link>
+                                    <Link href="layout-sidenav-light.html"><a className="nav-link" >Light Sidenav</a></Link>
                                 </nav>
                             </div>
                             <a className="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -43,9 +48,15 @@ const SideNav = () => {
                                     </a>
                                     <div className="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav className="sb-sidenav-menu-nested nav">
-                                            <a className="nav-link" href="login.html">Login</a>
-                                            <a className="nav-link" href="register.html">Register</a>
-                                            <a className="nav-link" href="password.html">Forgot Password</a>
+                                            <Link href="login.html">
+                                                <a className="nav-link" >Login</a>
+                                            </Link>
+                                            <Link href="login.html">
+                                                <a className="nav-link" >Register</a>
+                                            </Link>
+                                            <Link href="login.html">
+                                                <a className="nav-link" >Forgot Password</a>
+                                            </Link>
                                         </nav>
                                     </div>
                                     <a className="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
@@ -54,29 +65,40 @@ const SideNav = () => {
                                     </a>
                                     <div className="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav className="sb-sidenav-menu-nested nav">
-                                            <a className="nav-link" href="401.html">401 Page</a>
-                                            <a className="nav-link" href="404.html">404 Page</a>
-                                            <a className="nav-link" href="500.html">500 Page</a>
+                                            <Link href="401.html">
+                                            <a className="nav-link" >401 Page</a>
+                                            </Link>
+                                            <Link href="401.html">
+                                            <a className="nav-link" >401 Page</a>
+                                            </Link>
+                                            <Link href="401.html">
+                                                <a className="nav-link" >401 Page</a>
+                                            </Link>
                                         </nav>
                                     </div>
                                 </nav>
                             </div>
                             <div className="sb-sidenav-menu-heading">Addons</div>
+                            <Link href="tables.html">
                             <a className="nav-link" href="charts.html">
                                 <div className="sb-nav-link-icon"><i className="fas fa-chart-area"></i></div>
                                 Charts
                             </a>
-                            <a className="nav-link" href="tables.html">
+                            </Link>
+                            <Link href="tablePage">
+                            <a className="nav-link" >
                                 <div className="sb-nav-link-icon"><i className="fas fa-table"></i></div>
                                 Tables
                             </a>
+                            </Link>
+
                         </div>
                     </div>
                     <div className="sb-sidenav-footer">
                         <div className="small">Logged in as:</div>
                         Start Bootstrap
                     </div>
-                </Nav>
+                </nav>
             </div>
         </>
     )

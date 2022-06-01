@@ -4,6 +4,8 @@ import SideNav from './components/SideNav';
 import ChartLine from './components/Charts/ChartLine';
 import ChartBar from './components/Charts/ChartBar';
 import ChartPie from './components/Charts/ChartPie';
+import Link from 'next/link';
+
 
 const Home: NextPage = () => {
   return (
@@ -22,7 +24,9 @@ const Home: NextPage = () => {
                   <div className="card mb-4">
                       <div className="card-body">
                           Chart.js is a third party plugin that is used to generate the charts in this template. The charts below have been customized - for further customization options, please visit the official
-                          <a target="_blank" href="https://www.chartjs.org/docs/latest/">Chart.js documentation</a>
+                          <Link href="https://www.chartjs.org/docs/latest/">
+                            <a target="_blank" >Chart.js documentation</a>
+                          </Link>
                           .
                       </div>
                   </div>

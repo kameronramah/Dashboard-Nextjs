@@ -8,16 +8,7 @@ import Table from './components/Table'
 
 const TablePage: NextPage = () => {
   return (
-    <div className="sb-nav-fixed">
-      {/* side nav 
-      navbar 
-      main */}
-      <NavBar/>
-      <div id="layoutSidenav">
-        <Table/>
-      <SideNav/>
-      </div>
-    </div>
+    <Table/>
   )
 }
 
