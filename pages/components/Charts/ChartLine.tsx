@@ -71,7 +71,7 @@ const dataLine = {
 };
 
 
-const ChartLine = (props) => {
+const ChartLine = (props: { width: string | number | undefined; height: string | number | undefined; }) => {
     return (
         <div>
             <Line
